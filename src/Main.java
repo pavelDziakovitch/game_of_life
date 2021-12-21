@@ -1,9 +1,14 @@
+import java.awt.*;
+import java.awt.event.KeyEvent;
 import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
 
+
     public static void main(String[] args) {
+
+
 
         Scanner userInput = new Scanner(System.in);
 
@@ -16,12 +21,12 @@ public class Main {
         printArray(gamefield,genNumber);
 
         //repeat as long as user has not types "AUS"
-        while(!userInput.nextLine().equals("AUS")) {
+
+        while(!userInput.nextLine().equals("X")){
             genNumber++;
             checkAndChangeArray(gamefield, tempGamefield);
             printArray(gamefield,genNumber);
         }
-        userInput.close();
     }
 
     private static void fillArrays(boolean[][] gamefield, boolean[][] tempGamefield) {
@@ -101,6 +106,5 @@ public class Main {
         }
         return livingNeightborCount;
     }
-}
 
-//https://pretagteam.com/question/detect-a-key-press-in-console
+}
